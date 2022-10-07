@@ -1,0 +1,65 @@
+\documentclass[a4paper,12pt,oneside,article]{memoir}
+% lidt marginer
+
+\usepackage[utf8]{inputenc}
+\usepackage{icomma}
+\usepackage{amsmath, amssymb, bm, mathtools, mathdots}
+\usepackage[normalem]{ulem}
+\usepackage{array, booktabs, tabularx}
+\usepackage{graphicx, caption, subfig, xcolor}
+\captionsetup{font=small,labelfont=bf}
+\usepackage{enumerate}
+\usepackage[output-decimal-marker={,}]{siunitx}
+
+% \newcommand{\R}{\mathbb{R}} %\R for reelle tal
+% \newcommand{\C}{\mathbb{C}} %\C for komplekse tal
+% \newcommand{\N}{\mathbb{N}} %\N for naturlige tal
+% \newcommand{\Z}{\mathbb{Z}} %\Z for hele tal
+% \newcommand{\Q}{\mathbb{Q}} %\Q for rationale tal
+% \newcommand{\dg}{^{\circ}}%Brug \dg til at indsætte gradtegn
+% \usepackage[hidelinks=true]{hyperref}
+
+\begin{document}
+
+
+\chapter*{Homework 1}
+Dana Zhetesova M4135, 2022
+
+\section*{Task 1}
+Prove:
+
+\begin{equation*}
+	\frac{1}{n}\sum_{i=1}^n (x_i - \mathop{\mathbb{E}}\xi)^2 = \frac{1}{n}\sum_{i=1}^n (x_i - \overline{x})^2 +(\mathop{\mathbb{E}}\xi - \overline{x})^2
+\end{equation*}
+
+Solution:
+
+\begin{equation*}
+    \frac{1}{n}\sum_{i=1}^n (x_i - \mathop{\mathbb{E}}\xi)^2 = \frac{1}{n}(\sum_{i=1}^n x_i^2 - \sum_{i=1}^n (2 \mathop{\mathbb{E}}\xi * x_i) + \sum_{i=1}^n(\mathop{\mathbb{E}}\xi)^2)
+\end{equation*}
+
+\begin{equation*}
+    = \frac{1}{n}(\sum_{i=1}^n x_i^2 - 2\mathop{\mathbb{E}}\xi\sum_{i=1}^n x_i + n\mathop{\mathbb{E}^2}\xi)
+\end{equation*}
+
+\begin{equation*}
+    = \frac{1}{n}\sum_{i=1}^n x_i^2 - \frac{2n}{n}\mathop{\mathbb{E}}\xi\overline{x} + \mathop{\mathbb{E}^2}\xi
+\end{equation*}
+
+\begin{equation*}
+    = \frac{1}{n}\sum_{i=1}^n x_i^2 - 2\overline{x}\mathop{\mathbb{E}}\xi + \mathop{\mathbb{E}^2}\xi + \overline{x}^2 + \overline{x}^2 - 2\overline{x}^2
+\end{equation*}
+
+\begin{equation*}
+    = (\mathop{\mathbb{E}^2}\xi - 2\overline{x}\mathop{\mathbb{E}}\xi + \overline{x}^2) + (\frac{1}{n}\sum_{i=1}^n x_i^2 - 2\overline{x}^2 + \overline{x}^2)
+\end{equation*}
+
+\begin{equation*}
+    = (\mathop{\mathbb{E}}\xi - \overline{x})^2 + \frac{1}{n}\sum_{i=1}^n (x_i^2 - 2\overline{x}x_i + \overline{x}^2)
+\end{equation*}
+
+\begin{equation*}
+    = \frac{1}{n}\sum_{i=1}^n (x_i - \overline{x})^2 + (\mathop{\mathbb{E}}\xi - \overline{x})^2
+\end{equation*}
+
+\end{document}
